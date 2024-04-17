@@ -56,7 +56,9 @@ table {
     font-family:cursive;
 }
 
-@media screen and (min-width: 768px) {}
+@media screen and (min-width: 768px) {
+    
+}
 
 body{
     background-color: antiquewhite;
