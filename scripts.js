@@ -13,7 +13,7 @@ let sorok = [
     { tétel: "Kosztolányi_Dezső_Számadás", esemény: "Műfaja elégikus óda, temetési beszéd, prédikáció", válasz: "Halotti beszéd", kép1: "", kép2: "", kép3: "", kép4: "" },
     { tétel: "Kosztolányi_Dezső_Számadás", esemény: "Témája egy káprázatos látomás, amely ráébreszti a költőt az élet szépségeire és értelmére", válasz: "Hajnali részegség", kép1: "", kép2: "", kép3: "", kép4: "" },
     { tétel: "Kosztolányi_Dezső_Számadás", esemény: "A mű mondanivalója, hogy hogy mindannyian halandóak vagyunk, minden ember egyedi példány és minden emberi élet egyszeri, megismételhetetlen.", válasz: "Halotti beszéd", kép1: "", kép2: "", kép3: "", kép4: "" },
-    { tétel: "Kosztolányi_Dezső_Számadás", esemény: "Ez a vers a Számadás című versciklus darabjs", válasz: "Mindkettő", kép1: "", kép2: "", kép3: "", kép4: "" }
+    { tétel: "Kosztolányi_Dezső_Számadás", esemény: "Ez a vers a Számadás című versciklus darabja", válasz: "Mindkettő", kép1: "", kép2: "", kép3: "", kép4: "" }
 ];
 
 
