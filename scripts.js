@@ -47,18 +47,14 @@ function KerdesLetrehoz(sor) {
             ujDiv.addEventListener("click", (y) => {
                 KerdesLetrehoz(sorok[index])
                 valasztott = y.target.innerHTML;
-                if ( valasztott == sor.válasz){
+                if ( valasztott == sor.válasz)
                     pontszam++
-                }
-                else{
+                else
                     hibazott.push(sor)
-                }
             })
             document.querySelector(".quiz-options").appendChild(ujDiv);
         })
     }
-
-
     else {
         let tomb=["Mindkettő","Hajnali részegség","Halotti beszéd"]         
         tomb.forEach(x => {
@@ -68,12 +64,10 @@ function KerdesLetrehoz(sor) {
             ujDiv.addEventListener("click", (y) => {
                 KerdesLetrehoz(sorok[index])
                 valasztott = y.target.innerHTML;
-                if ( valasztott == sor.válasz){
+                if ( valasztott == sor.válasz)
                     pontszam++
-                }
-                else{
+                else
                     hibazott.push(sor)
-                }
             })
             document.querySelector(".quiz-options").appendChild(ujDiv);
         })
