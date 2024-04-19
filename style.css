@@ -56,12 +56,12 @@ table {
     font-family:cursive;
 }
 
-@media screen and (min-width: 768px) {
-    
+@media screen and (max-width: 768px) {
+ 
 }
 
 body{
-    background-color: antiquewhite;
+    background-color: rgb(35,41,63);
 }
 
 .container {
@@ -73,9 +73,9 @@ body{
 .quiz-options {
     width: fit-content;
     height: fit-content;
-    padding: 10px;
+    padding: 15px;
     background-color: aliceblue;
-    border-radius: 40px;
+    border-radius: 20px;
     box-shadow: 10px 10px 5px black;
     display: flex;
     align-items: center;
@@ -90,15 +90,40 @@ h1{
     font-weight: bold;
     margin: 100px;
     width: 40vw;
+    color: rgb(192, 189, 189);
 }
 
 .quiz-option{
     margin: 10px;
-    padding: 10px;
+    padding: 25px;
     width: 35vw;
-    background-color:coral;
-    border-radius: 10px;
+    background-color: rgb(203,220,230);
+    border-radius: 25px;
     text-align: center;
     cursor: pointer;
-    border: 2px solid black;
+}
+.quiz-option:hover{
+    opacity: 0.6;
+}
+hr{
+    margin: auto;
+    height: 1.5px;
+    width: 80%;
+    background-color: rgb(100, 100, 99);
+    margin-bottom: 30px;
+
+}
+#question-counter{
+    color: rgb(192, 189, 189);
+    margin: auto;
+    text-align: center;
+    justify-self: center;
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    
+    
+}
+@media screen and (max-width: 800px) {
+ 
 }
