@@ -165,7 +165,7 @@ function Reszletez() {
     table.appendChild(tr)
 
     let tdTetelnev = document.createElement('td')
-    tdTetelnev.innerHTML = quiz.tétel.replace('_', ' ')
+    tdTetelnev.innerHTML = quiz.tétel.replaceAll('_', ' ')
 
     let tdEsemeny = document.createElement('td')
     tdEsemeny.innerHTML = quiz.esemény
