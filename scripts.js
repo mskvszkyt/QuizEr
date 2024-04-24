@@ -326,5 +326,3 @@ document.getElementById("question-help").addEventListener("click", () => {
 function ForditottKerdesek() {
   document.querySelector("#forditott-kerdesek-btn").style.background = "#0056b3"
 }
-
-Indit();
