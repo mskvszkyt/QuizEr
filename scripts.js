@@ -123,6 +123,10 @@ lista.appendChild(osszesOpcio);
 
 
 function Indit() {
+    if (!document.querySelector(".forditott-kerdesek-btn").classList.contains("nem-forditott-kerdesek-btn")) {
+      //mashogy adjuk meg az adatokat
+    }
+
     if (document.getElementById('temakorok').value != "Összes") 
       temakorKerdesei = sorok.filter(x => x.tétel.replaceAll('_',' ') == document.getElementById('temakorok').value);
     else
