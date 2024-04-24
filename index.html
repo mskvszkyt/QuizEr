@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script defer src="scripts.js"></script>
- 
+
     <title>Document</title>
 </head>
+
 <body>
-    <div  id="start-container">
-    <h1 id="start-text">Érettségi Quiz</h1>
-    <h2 id="start-desc">2024</h2>
+    <div id="start-container">
+        <h1 id="start-text">Érettségi Quiz</h1>
+        <h2 id="start-desc">2024</h2>
         <button id="start-btn">
             <span id="play-icon">▶</span> Kezdés
         </button>
 
     </div>
     <div class="container" style="display: none;">
-        <h1 class="question" >Itt lesz a kérdés?</h1>
-        
+        <h1 class="question">Itt lesz a kérdés?</h1>
 
-        
+
+
         <hr>
     </div>
 
@@ -34,7 +36,7 @@
             <span id="question-counter">Kérdés 0 / 0</span>
             <span id="question-help">Segítség</span>
         </div>
-        
+
     </div>
 
     <div id="modal" class="modal">
@@ -42,25 +44,30 @@
             <span class="close">&times;</span>
             <div class="modal-content-center">
                 <h2>Összesítő</h2>
-                <p> <span id="score"></span>/15</p>
-                <table id="quiz-table" class="quiz-table"></table>
+                <p id="score"></p>
+                <div class="table-div">
+                    <table id="quiz-table"></table>
+                </div>
                 <button id="restart">Újrakezdés</button>
+                <button id="reszletez" onclick="Reszletez()">Részletek</button>
+                <button id="reszletez" onclick="Átnézés()">Áttekintés</button>
             </div>
-          
+
         </div>
-        
+
     </div>
 
     <div id="display-help">
-        <img src="" >
+        <img src="">
     </div>
 
     <footer>
-        <div class="footer-container" >
+        <div class="footer-container">
             <p>QUIZ</p>
-            <div class="progress-bar" ></div>
+            <div class="progress-bar"></div>
         </div>
     </footer>
-    
+
 </body>
+
 </html>
