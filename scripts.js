@@ -105,72 +105,6 @@ let hibazott = [];
 let jelenlegiKerdes = "";
 let table = document.querySelector('#quiz-table')
 
-<<<<<<< HEAD
-function Indit() {
-  for (let i = sorok.length - 1; i > 0; i--) {
-    let j = Math.floor(Math.random() * (i + 1));
-    [sorok[i], sorok[j]] = [sorok[j], sorok[i]];
-  }
-  KerdesLetrehoz(sorok[0]);
-  document.querySelector('.progress-bar').style.display = 'block';
-  document.querySelector('#score').innerHTML = `${pontszam}/${sorok.length}`;
-}
-
-function KerdesLetrehoz(sor) {
-  if (index >= sorok.length) {
-    showModal(pontszam);
-    return;
-  }
-  jelenlegiKerdes = sor;
-  document.querySelector('#display-help').innerHTML = ""
-
-  document.getElementById("question-counter").textContent = `Kérdés ${index + 1} / ${sorok.length}`;
-  index++;
-  document.querySelector(".quiz-options").innerHTML = "";
-  document.querySelector(".question").innerHTML = sor.esemény;
-  if (sor.tétel != "[ 4] Kosztolányi_Dezső_Számadás") {
-    let kerdesek = sorok.filter(x => x.tétel == sor.tétel);
-    kerdesek.forEach(x => {
-      let ujDiv = document.createElement("div");
-      ujDiv.classList.add("quiz-option");
-      ujDiv.innerHTML = x.válasz;
-      ujDiv.addEventListener("click", (y) => {
-        KerdesLetrehoz(sorok[index]);
-        valasztott = y.target.innerHTML;
-        if (valasztott == sor.válasz)
-          pontszam++;
-        else
-          hibazott.push([sor, valasztott]);
-      });
-      document.querySelector(".quiz-options").appendChild(ujDiv);
-    });
-  }
-  else {
-    let tomb = ["Mindkettő", "Hajnali részegség", "Halotti beszéd"];
-    tomb.forEach(x => {
-      let ujDiv = document.createElement("div");
-      ujDiv.classList.add("quiz-option");
-      ujDiv.innerHTML = x;
-      ujDiv.addEventListener("click", (y) => {
-        KerdesLetrehoz(sorok[index]);
-        valasztott = y.target.innerHTML;
-        if (valasztott == sor.válasz)
-          pontszam++;
-        else
-          hibazott.push([sor, valasztott]);
-      });
-      document.querySelector(".quiz-options").appendChild(ujDiv);
-    });
-  }
-  if (index >= 2) {
-    document.querySelector('.progress-bar').style.display = 'block';
-    document.querySelector('.progress-bar').style.width = ((index / sorok.length) * 100) + '%';
-  }
-}
-
-
-
-=======
 let lista = document.getElementById("temakorok");
 let tempTomb = [];
 sorok.forEach(y => {
@@ -253,7 +187,6 @@ function KerdesLetrehoz(sor) {
     }
 }
 
->>>>>>> secondary
 function showModal(score) {
   const modal = document.getElementById("modal");
   const scoreElement = document.getElementById("score");
@@ -290,12 +223,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const quizContainers = document.querySelectorAll('.container');
   const question = document.querySelector('.question');
 
-<<<<<<< HEAD
-  startBtn.addEventListener('click', function () {
-    startContainer.style.display = 'none';
-    quizContainers.forEach(container => {
-      container.style.display = 'grid';
-=======
     startBtn.addEventListener('click', function () {
         startContainer.style.display = 'none';
         quizContainers.forEach(container => {
@@ -303,11 +230,9 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         question.style.display = 'block';
         Indit();
->>>>>>> secondary
     });
     question.style.display = 'block';
   });
-});
 
 
 
@@ -343,21 +268,12 @@ function Reszletez() {
   });
 }
 
-<<<<<<< HEAD
-function Atnezes() {
-  document.querySelector('.table-div').style.display = 'flex';
-  table.innerHTML = '';
-  ogSorok.forEach(sor => {
-    let tr = document.createElement('tr')
-    table.appendChild(tr)
-=======
-function Átnézés(){
+function Atnezes(){
     document.querySelector('.table-div').style.display = 'flex';
     table.innerHTML = '';
     sorok.forEach(sor => {
         let tr = document.createElement('tr')
         table.appendChild(tr)
->>>>>>> secondary
 
     let tdTetelnev = document.createElement('td')
     tdTetelnev.innerHTML = sor.tétel.replace('_', ' ')
