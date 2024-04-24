@@ -181,8 +181,8 @@ hr {
     z-index: 1;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     user-select: none;
     background-color: rgba(0, 0, 0, 0.5);
     overflow: auto;
@@ -321,7 +321,8 @@ th,
 td {
     border: 1px solid #dddddd;
     text-align: left;
-    padding: 8px;
+    padding: 4px;
+    width: fit-content;
 }
 
 th {
@@ -387,6 +388,10 @@ th {
 
     #start-desc {
         font-size: 1.6rem;
+    }
+
+    .modal-content{
+        width: 90vw;
     }
 }
 
