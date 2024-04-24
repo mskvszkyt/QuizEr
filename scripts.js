@@ -142,7 +142,8 @@ function KerdesLetrehoz(sor) {
         showModal(pontszam);
         return;
     }
-
+    jelenlegiKerdes = sor;
+    document.getElementById("display-help").innerHTML = "";
     document.getElementById("question-counter").textContent = `Kérdés ${index + 1} / ${temakorKerdesei.length}`;
     index++;
     document.querySelector(".quiz-options").innerHTML = "";
