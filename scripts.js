@@ -18,23 +18,26 @@ let sorok = [
 
 
 let index = 0;
-let valasztott = ""
-let pontszam = 0
-let hibazott = []
-function Indit() {
+let valasztott = "";
+let pontszam = 0;
+let hibazott = [];
 
+function Indit() {
     for (let i = sorok.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1));
         [sorok[i], sorok[j]] = [sorok[j], sorok[i]];
     }
-    KerdesLetrehoz(sorok[0])
+    KerdesLetrehoz(sorok[0]);
+    document.querySelector('.progress-bar').style.display = 'block';
 }
 
 function KerdesLetrehoz(sor) {
     if (index >= sorok.length) {
-        alert(`Véget ért a quiz! A pontod ${pontszam}/15`)
+        showModal(pontszam);
         return;
     }
+
+    document.getElementById("question-counter").textContent = `Kérdés ${index + 1} / ${sorok.length}`;
     index++;
     document.querySelector(".quiz-options").innerHTML = "";
     document.querySelector(".question").innerHTML = sor.esemény;
@@ -45,36 +48,81 @@ function KerdesLetrehoz(sor) {
             ujDiv.classList.add("quiz-option");
             ujDiv.innerHTML = x.válasz;
             ujDiv.addEventListener("click", (y) => {
-                KerdesLetrehoz(sorok[index])
+                KerdesLetrehoz(sorok[index]);
                 valasztott = y.target.innerHTML;
                 if ( valasztott == sor.válasz)
-                    pontszam++
+                    pontszam++;
                 else
-                    hibazott.push(sor)
-            })
+                    hibazott.push(sor);
+            });
             document.querySelector(".quiz-options").appendChild(ujDiv);
-        })
+        });
     }
     else {
-        let tomb=["Mindkettő","Hajnali részegség","Halotti beszéd"]         
+        let tomb=["Mindkettő","Hajnali részegség","Halotti beszéd"];         
         tomb.forEach(x => {
             let ujDiv = document.createElement("div");
             ujDiv.classList.add("quiz-option");
             ujDiv.innerHTML = x;
             ujDiv.addEventListener("click", (y) => {
-                KerdesLetrehoz(sorok[index])
+                KerdesLetrehoz(sorok[index]);
                 valasztott = y.target.innerHTML;
                 if ( valasztott == sor.válasz)
-                    pontszam++
+                    pontszam++;
                 else
-                    hibazott.push(sor)
-            })
+                    hibazott.push(sor);
+            });
             document.querySelector(".quiz-options").appendChild(ujDiv);
-        })
+        });
+    }
+    if (index >= 2) {
+        document.querySelector('.progress-bar').style.display = 'block';
+        document.querySelector('.progress-bar').style.width = ((index / sorok.length) * 100) + '%';
     }
 }
 
-//TODO: h1 a kérdés kosztolányinál eltolja valószínűleg
 
-Indit()
+Indit();
 
+function showModal(score) {
+    const modal = document.getElementById("modal");
+    const scoreElement = document.getElementById("score");
+    scoreElement.textContent = score;
+    modal.style.display = "block";
+}
+
+function restartQuiz() {
+    index = 0;
+    pontszam = 0;
+    hibazott = [];
+    document.querySelector('.progress-bar').style.display = 'none'; 
+    document.querySelector('.progress-bar').style.width = '0%';
+    Indit();
+    document.getElementById("modal").style.display = "none";
+}
+
+document.getElementById("restart").addEventListener("click", restartQuiz);
+document.querySelector(".close").addEventListener("click", restartQuiz);
+
+var modal = document.getElementById("modal");
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+    restartQuiz();
+  }
+}
+document.addEventListener('DOMContentLoaded', function () {
+    const startBtn = document.getElementById('start-btn');
+    const startContainer = document.getElementById('start-container');
+    const quizContainers = document.querySelectorAll('.container');
+    const question = document.querySelector('.question');
+
+    startBtn.addEventListener('click', function () {
+        startContainer.style.display = 'none';
+        quizContainers.forEach(container => {
+            container.style.display = 'grid';
+        });
+        question.style.display = 'block';
+    });
+});
