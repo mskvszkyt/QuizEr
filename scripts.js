@@ -1,101 +1,6 @@
-let sorok = [
-  {
-    "tétel": "[10] Herczeg_Ferenc_Az_Élet_kapuja",
-    "esemény": "Agostino Chigi",
-    "válasz": "A művészek pártfogója és akit a leggazdagabbnak tartanak Rómában.",
-    "kép1": "Herczeg_Ferenc_Az_Élet_kapuja_Agostino Chigi_1.jpg"
-  },
-  {
-    "tétel": "[10] Herczeg_Ferenc_Az_Élet_kapuja",
-    "esemény": "Cardulo",
-    "válasz": "Szentéletű pap, tudós és diplomata, aki igyekezett a világi tudását is gyarapítani.",
-    "kép1": "Herczeg_Ferenc_Az_Élet_kapuja_Cardulo_1.jfif"
-  },
-  {
-    "tétel": "[10] Herczeg_Ferenc_Az_Élet_kapuja",
-    "esemény": "Vico Hannibal",
-    "válasz": "Nápolyi kalandor, köpönyegforgató macsó, aki a barátságait úgy váltogatja, ahogy az érdekei kívánják.",
-    "kép1": "Herczeg_Ferenc_Az_Élet_kapuja_Vico Hannibal_1.jfif"
-  },
-  {
-    "tétel": "[10] Herczeg_Ferenc_Az_Élet_kapuja",
-    "esemény": "II. Julius",
-    "válasz": "Ő maga semmihez sem ért az öntelt magamutogatáson kívül, ezért művészekre bízza, hogy naggyá tegyék a kereszténység központját, Rómát.",
-    "kép1": "Herczeg_Ferenc_Az_Élet_kapuja_II. Julius_1.jfif",
-    "kép2": "Herczeg_Ferenc_Az_Élet_kapuja_II. Julius_2.jfif",
-    "kép3": "Herczeg_Ferenc_Az_Élet_kapuja_II. Julius_3.jfif"
-  },
-  {
-    "tétel": "[10] Herczeg_Ferenc_Az_Élet_kapuja",
-    "esemény": "Medici Giovanni",
-    "válasz": "Szereti szórni a pénzt és más magas rangú emberekhez hasonlóan ő is szeret \"pogány\" áldozatokat bemutatni a régi római isteneknek.",
-    "kép1": "Herczeg_Ferenc_Az_Élet_kapujac_Medici Giovanni_1.jpg"
-  },
-  {
-    "tétel": "[11] Csokonai_Mihály_stílusszintézisek",
-    "esemény": "Estve",
-    "válasz": "Klasszicizmus (Rousseau)",
-    "kép1": "Csokonai_Mihály_stílusszintézisek_Estve_1.jfif",
-  },
-  {
-    "tétel": "[11] Csokonai_Mihály_stílusszintézisek",
-    "esemény": "Tartózkodó Kérelem",
-    "válasz": "Rokokó",
-    "kép1": "Csokonai_Vitéz_Mihály_stílusszintézisek_rokokó1.jpg"
-  },
-  {
-    "tétel": "[11] Csokonai_Mihály_stílusszintézisek",
-    "esemény": "A Reményhez",
-    "válasz": "Szentimentalizmus",
-    "kép1": "Csokonai_Vitéz_Mihály_stílusszintézisek_szentimentalizmus1.jpg"
-  },
-  {
-    "tétel": "[11] Csokonai_Mihály_stílusszintézisek",
-    "esemény": "Szegény Zsuzsi, a táborozáskor",
-    "válasz": "Népiesség",
-    "kép1": "Csokonai_Vitéz_Mihály_stílusszintézisek_népiesség1.jpg"
-  },
-  {
-    "tétel": "[11] Csokonai_Mihály_stílusszintézisek",
-    "esemény": "Konstancinápoly",
-    "válasz": "Klasszicizmus (Voltaire)",
-    "kép1": "Csokonai_Mihály_stílusszintézisek_Konstancinápoly_1.jpg",
-    "kép2": "Csokonai_Vitéz_Mihály_stílusszintézisek_konstancinápoly2.jpg",
-    "kép3": "Csokonai_Vitéz_Mihály_stílusszintézisek_klasszicizmus1.jpg"
-  },
-  {
-    "tétel": "[ 4] Kosztolányi_Dezső_Számadás",
-    "esemény": "Műfaja filozofikus vers, típusa szerint őn-és létértelmező",
-    "válasz": "Hajnali részegség",
-    "kép1": "Kosztolányi_Dezső_Számadás_Hajnali_Részegség3.jpg"
-  },
-  {
-    "tétel": "[ 4] Kosztolányi_Dezső_Számadás",
-    "esemény": "Műfaja elégikus óda, temetési beszéd, prédikáció",
-    "válasz": "Halotti beszéd",
-    "kép1": "Kosztolányi_Dezső_Számadás_Halotti_beszéd3.jpg"
-  },
-  {
-    "tétel": "[ 4] Kosztolányi_Dezső_Számadás",
-    "esemény": "Témája egy káprázatos látomás, amely ráébreszti a költőt az élet szépségeire és értelmére",
-    "válasz": "Hajnali részegség",
-    "kép1": "Kosztolányi_Dezső_Számadás_Hajnali_Részegség2.jpg",
-    "kép2": "Kosztolányi_Dezső_Számadás_Hajnali_Részegség.jpg",
-    "kép3": "Kosztolányi_Dezső_Számadás_Hajnali_Részegség3.jpg"
-  },
-  {
-    "tétel": "[ 4] Kosztolányi_Dezső_Számadás",
-    "esemény": "A mű mondanivalója, hogy hogy mindannyian halandóak vagyunk, minden ember egyedi példány és minden emberi élet egyszeri, megismételhetetlen.",
-    "válasz": "Halotti beszéd",
-    "kép1": "Kosztolányi_Dezső_Számadás_Halotti_Beszéd_1.jpg"
-  },
-  {
-    "tétel": "[ 4] Kosztolányi_Dezső_Számadás",
-    "esemény": "Ez a vers a Számadás című versciklus darabja",
-    "válasz": "Mindkettő",
-    "kép1": "Kosztolányi_Dezső_Számadás_Számadás_kötet.jpg"
-  }
-]
+import {adatok} from "./adatok.js"
+
+let sorok = []
 
 let temakorKerdesei = [];
 let index = 0;
@@ -104,6 +9,7 @@ let pontszam = 0;
 let hibazott = [];
 let jelenlegiKerdes = "";
 let table = document.querySelector('#quiz-table')
+ReadLines2Obj(adatok)
 
 let lista = document.getElementById("temakorok");
 let tempTomb = [];
@@ -124,7 +30,14 @@ lista.appendChild(osszesOpcio);
 
 function Indit() {
     if (!document.querySelector(".forditott-kerdesek-btn").classList.contains("nem-forditott-kerdesek-btn")) {
-      //mashogy adjuk meg az adatokat
+      sorok.forEach(x => {
+        if(x.tétel != "[ 4] Kosztolányi_Dezső_Számadás"){          
+          let valasz = x.esemény;
+          let esemeny = x.válasz;
+          x.válasz = valasz;
+          x.esemény = esemeny;
+        }
+      });
     }
 
     if (document.getElementById('temakorok').value != "Összes") 
@@ -273,6 +186,8 @@ function Reszletez() {
   });
 }
 
+document.getElementById('reszletez').onclick = () => Reszletez()
+
 function Atnezes(){
     document.querySelector('.table-div').style.display = 'flex';
     table.innerHTML = '';
@@ -312,8 +227,6 @@ function Atnezes(){
       kep.classList.add("kicsiKepek");
       tdKep.appendChild(kep)
     }
-
-
     tr.appendChild(tdTetelnev)
     tr.appendChild(tdEsemeny)
     tr.appendChild(tdValasz)
@@ -321,21 +234,46 @@ function Atnezes(){
   });
 }
 
+document.getElementById('atnez').onclick = () => Atnezes()
+
 document.getElementById("question-help").addEventListener("click", () => {
-  let kep = document.createElement("img");
-  kep.src = `images\\${jelenlegiKerdes.kép1}`
   document.getElementById("display-help").innerHTML = "";
-  document.getElementById("display-help").appendChild(kep);
+  if (jelenlegiKerdes.kép3 != null) {
+    let kep1= document.createElement("img");
+    let kep2= document.createElement("img");
+    let kep3= document.createElement("img");
+    kep1.src = `images\\${jelenlegiKerdes.kép1}`
+    kep2.src = `images\\${jelenlegiKerdes.kép2}`
+    kep3.src = `images\\${jelenlegiKerdes.kép3}`
+    kep1.classList.add("kepek-help");
+    kep2.classList.add("kepek-help");
+    kep3.classList.add("kepek-help");
+    document.getElementById("display-help").appendChild(kep1);
+    document.getElementById("display-help").appendChild(kep2);
+    document.getElementById("display-help").appendChild(kep3);
+  }
+  else{
+    let kep = document.createElement("img");
+    kep.src = `images\\${jelenlegiKerdes.kép1}`
+    kep.classList.add("kepek-help");
+    document.getElementById("display-help").appendChild(kep);
+  }
 })
 
 function ForditottKerdesek() {
   document.querySelector(".forditott-kerdesek-btn").classList.toggle("nem-forditott-kerdesek-btn");
 }
 
+document.querySelector(".forditott-kerdesek-btn").addEventListener("click", ForditottKerdesek);
+
 function ReadLines2Obj(importedCSV){
   importedCSV.shift()
   importedCSV.forEach(sor => {
       var splitelt = sor.split(';')
-      sorok.push({"tétel":`${splitelt[0]}`, "esemény":`${splitelt[1]}`,"válasz":`${splitelt[2]}`})
+      if (splitelt.length == 4)
+        sorok.push({"tétel":`${splitelt[0]}`, "esemény":`${splitelt[1]}`,"válasz":`${splitelt[2]}`,"kép1":`${splitelt[3]}`})
+      else
+        sorok.push({"tétel":`${splitelt[0]}`, "esemény":`${splitelt[1]}`,"válasz":`${splitelt[2]}`,"kép1":`${splitelt[3]}`, "kép2":`${splitelt[4]}`, "kép3":`${splitelt[5]}`})        
   });
+  console.log(sorok)
 }

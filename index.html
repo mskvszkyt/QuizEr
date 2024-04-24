@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script defer src="scripts.js"></script>
+    <script defer src="scripts.js" type="module"></script>
 
     <title>Document</title>
 </head>
@@ -19,7 +19,7 @@
         <button id="start-btn">
             <span id="play-icon">▶</span> Kezdés
         </button>
-        <button class="forditott-kerdesek-btn nem-forditott-kerdesek-btn" onclick="ForditottKerdesek()">
+        <button class="forditott-kerdesek-btn nem-forditott-kerdesek-btn">
             Fordított kérdések?
         </button>
         <br>
@@ -54,8 +54,8 @@
                     <table id="quiz-table"></table>
                 </div>
                 <button id="restart">Újrakezdés</button>
-                <button id="reszletez" onclick="Reszletez()">Hibák Áttekintése</button>
-                <button id="reszletez" onclick="Atnezes()">Tananyag Áttekintése</button>
+                <button id="reszletez">Hibák Áttekintése</button>
+                <button id="atnez">Tananyag Áttekintése</button>
             </div>
 
         </div>

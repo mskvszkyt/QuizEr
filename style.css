@@ -230,7 +230,7 @@ hr {
 }
 
 #restart,
-#reszletez {
+#reszletez, #atnez {
     background-color: #1f4670;
     color: white;
     padding: 15px 28px;
@@ -426,4 +426,12 @@ th {
     background-color: #0056b3;
     transform: scale(1.05);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.kepek-help{
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    border: 3px solid #0056b3;
+    border-radius: 5%;
 }
