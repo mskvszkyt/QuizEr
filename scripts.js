@@ -331,3 +331,11 @@ document.getElementById("question-help").addEventListener("click", () => {
 function ForditottKerdesek() {
   document.querySelector(".forditott-kerdesek-btn").classList.toggle("nem-forditott-kerdesek-btn");
 }
+
+function ReadLines2Obj(importedCSV){
+  importedCSV.shift()
+  importedCSV.forEach(sor => {
+      var splitelt = sor.split(';')
+      sorok.push({"tétel":`${splitelt[0]}`, "esemény":`${splitelt[1]}`,"válasz":`${splitelt[2]}`})
+  });
+}
