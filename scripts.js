@@ -198,7 +198,7 @@ function showModal(score) {
   scoreElement.textContent = score;
   modal.style.display = "block";
 }
-
+/*
 function restartQuiz() {
   index = 0;
   pontszam = 0;
@@ -208,9 +208,9 @@ function restartQuiz() {
   document.querySelector('.progress-bar').style.width = '0%';
   Indit();
   document.getElementById("modal").style.display = "none";
-}
+}*/
 
-document.getElementById("restart").addEventListener("click", restartQuiz);
+document.getElementById("restart").addEventListener("click", () => location.reload());
 document.querySelector(".close").addEventListener("click", () => location.reload());
 
 var modal = document.getElementById("modal");
