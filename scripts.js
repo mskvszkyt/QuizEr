@@ -97,41 +97,63 @@ let sorok = [
     }
   ]
 
-let ogSorok = sorok;
+let temakorKerdesei = [];
 let index = 0;
 let valasztott = "";
 let pontszam = 0;
 let hibazott = [];
 let table = document.querySelector('#quiz-table')
 
-function Indit() {
-    for (let i = sorok.length - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1));
-        [sorok[i], sorok[j]] = [sorok[j], sorok[i]];
+let lista = document.getElementById("temakorok");
+let tempTomb = [];
+sorok.forEach(y => {
+    if (tempTomb.includes(y.tétel) == false) {
+        tempTomb.push(y.tétel);
+        let opcio = document.createElement("option");
+        opcio.text = y.tétel.replaceAll('_',' ');
+        lista.appendChild(opcio);
     }
-    KerdesLetrehoz(sorok[0]);
+});
+let osszesOpcio =document.createElement("option");
+osszesOpcio.text = "Összes";
+osszesOpcio.id = "Összes";
+lista.appendChild(osszesOpcio);
+
+
+
+function Indit() {
+    if (document.getElementById('temakorok').value != "Összes") 
+      temakorKerdesei = sorok.filter(x => x.tétel.replaceAll('_',' ') == document.getElementById('temakorok').value);
+    else
+      temakorKerdesei = sorok;
+
+    for (let i = temakorKerdesei.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [temakorKerdesei[i], temakorKerdesei[j]] = [temakorKerdesei[j], temakorKerdesei[i]];
+    }
+    KerdesLetrehoz(temakorKerdesei[0]);
     document.querySelector('.progress-bar').style.display = 'block';
-    document.querySelector('#score').innerHTML = `${pontszam}/${sorok.length}`;
+    document.querySelector('#score').innerHTML = `${pontszam}/${temakorKerdesei.length}`;
 }
 
 function KerdesLetrehoz(sor) {
-    if (index >= sorok.length) {
+    if (index >= temakorKerdesei.length) {
         showModal(pontszam);
         return;
     }
 
-    document.getElementById("question-counter").textContent = `Kérdés ${index + 1} / ${sorok.length}`;
+    document.getElementById("question-counter").textContent = `Kérdés ${index + 1} / ${temakorKerdesei.length}`;
     index++;
     document.querySelector(".quiz-options").innerHTML = "";
     document.querySelector(".question").innerHTML = sor.esemény;
     if (sor.tétel != "[ 4] Kosztolányi_Dezső_Számadás") {
-        let kerdesek = sorok.filter(x => x.tétel == sor.tétel);
+        let kerdesek = temakorKerdesei.filter(x => x.tétel == sor.tétel);
         kerdesek.forEach(x => {
             let ujDiv = document.createElement("div");
             ujDiv.classList.add("quiz-option");
             ujDiv.innerHTML = x.válasz;
             ujDiv.addEventListener("click", (y) => {
-                KerdesLetrehoz(sorok[index]);
+                KerdesLetrehoz(temakorKerdesei[index]);
                 valasztott = y.target.innerHTML;
                 if (valasztott == sor.válasz)
                     pontszam++;
@@ -148,7 +170,7 @@ function KerdesLetrehoz(sor) {
             ujDiv.classList.add("quiz-option");
             ujDiv.innerHTML = x;
             ujDiv.addEventListener("click", (y) => {
-                KerdesLetrehoz(sorok[index]);
+                KerdesLetrehoz(temakorKerdesei[index]);
                 valasztott = y.target.innerHTML;
                 if (valasztott == sor.válasz)
                     pontszam++;
@@ -160,12 +182,9 @@ function KerdesLetrehoz(sor) {
     }
     if (index >= 2) {
         document.querySelector('.progress-bar').style.display = 'block';
-        document.querySelector('.progress-bar').style.width = ((index / sorok.length) * 100) + '%';
+        document.querySelector('.progress-bar').style.width = ((index / temakorKerdesei.length) * 100) + '%';
     }
 }
-
-
-Indit();
 
 function showModal(score) {
     const modal = document.getElementById("modal");
@@ -186,7 +205,7 @@ function restartQuiz() {
 }
 
 document.getElementById("restart").addEventListener("click", restartQuiz);
-document.querySelector(".close").addEventListener("click", restartQuiz);
+document.querySelector(".close").addEventListener("click", () => location.reload());
 
 var modal = document.getElementById("modal");
 
@@ -209,6 +228,7 @@ document.addEventListener('DOMContentLoaded', function () {
             container.style.display = 'grid';
         });
         question.style.display = 'block';
+        Indit();
     });
 });
 
@@ -249,7 +269,7 @@ function Reszletez() {
 function Átnézés(){
     document.querySelector('.table-div').style.display = 'flex';
     table.innerHTML = '';
-    ogSorok.forEach(sor => {
+    sorok.forEach(sor => {
         let tr = document.createElement('tr')
         table.appendChild(tr)
 
