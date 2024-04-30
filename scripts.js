@@ -79,7 +79,7 @@ function KerdesLetrehoz(sor) {
                 else
                     hibazott.push([sor, valasztott]);
             });
-            docld(ujDiv);
+            document.querySelector(".quiz-options").appendChild(ujDiv);
         });
     }
     else {
