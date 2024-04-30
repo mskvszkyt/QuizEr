@@ -87,11 +87,11 @@ table {
     }
 }
 
-@media only screen and (cursor: none) {
-    *{
-        font-family: 'Courier New', Courier, monospace;
+@media only screen and (max-width: 767px) and (pointer: coarse) {
+    body {
+      font-family:'Times New Roman', Times, serif;
     }
-}
+  }
 
 * {
     font-family: Comic Sans MS, Comic Sans, cursive;
