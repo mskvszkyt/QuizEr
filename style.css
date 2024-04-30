@@ -52,11 +52,51 @@ table {
 
 /*#endregion */
 
+@media screen and (max-width: 768px) {
+    .display-container {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    #question-counter,
+    #question-help{
+        margin-bottom: 10px;
+        width: auto;
+    }
+
+    #start-btn {
+        font-size: 30px;
+        padding: 15px 30px;
+    }
+
+    #start-text {
+        font-size: 2.5rem;
+    }
+
+    #start-desc {
+        font-size: 1.6rem;
+    }
+
+    .modal-content{
+        width: 90vw;
+    }
+
+    .question {
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (cursor: none) {
+    *{
+        font-family: 'Courier New', Courier, monospace;
+    }
+}
+
 * {
     font-family: Comic Sans MS, Comic Sans, cursive;
 }
 
-@media screen and (max-width: 768px) {}
 
 body {
     background-color: rgb(35, 41, 63);
@@ -97,11 +137,7 @@ h1 {
     user-select: none;
 }
 
-@media screen and (max-width: 768px) {
-    .question {
-        font-size: 1.5rem;
-    }
-}
+
 
 .quiz-option {
     margin: 10px;
@@ -160,19 +196,7 @@ hr {
     background-color: rgba(0, 0, 0, 0.3);
 }
 
-@media screen and (max-width: 768px) {
-    .display-container {
-        display: flex;
-        flex-direction: column;
 
-    }
-
-    #question-counter,
-    #question-help{
-        margin-bottom: 10px;
-        width: auto;
-    }
-}
 
 
 .modal {
@@ -376,24 +400,7 @@ th {
     margin-bottom: 20px;
 }
 
-@media screen and (max-width: 768px) {
-    #start-btn {
-        font-size: 30px;
-        padding: 15px 30px;
-    }
 
-    #start-text {
-        font-size: 2.5rem;
-    }
-
-    #start-desc {
-        font-size: 1.6rem;
-    }
-
-    .modal-content{
-        width: 90vw;
-    }
-}
 
 .kicsiKepek{
     width: 50px;
